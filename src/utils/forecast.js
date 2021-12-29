@@ -1,10 +1,13 @@
 // 37. Callback Abstraction Challenge
 
 const request = require('postman-request');
+const forecastAccessKey = process.env.access_key;
 
 const forecast = (latitude, longitude, callback) => {
 	const url =
-		'http://api.weatherstack.com/current?access_key=e36bc44aeb236dda71edac9628fac8c9&query=' +
+		'http://api.weatherstack.com/current?' +
+        forecastAccessKey +
+        '&query=' +
 		latitude +
 		', ' +
 		longitude +
